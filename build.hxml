@@ -1,0 +1,6 @@
+-main Main
+-x test.n
+-cp src/main/haxe
+-cp src/test/haxe
+-lib tink_macro
+-lib thx.core
