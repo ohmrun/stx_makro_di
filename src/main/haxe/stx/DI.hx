@@ -1,5 +1,6 @@
 package stx;
 
+import stx.di.Resolver;
 import stx.di.Resolvers;
 import haxe.macro.Expr;
 import haxe.Constraints.Function;
@@ -19,7 +20,7 @@ import haxe.Constraints.Function;
     var instances   : std.haxe.ds.StringMap<Dynamic>;
     var factories   : std.haxe.ds.StringMap<Void->Dynamic>;
     var parent      : DI;
-    var resolver    : String->Dynamic;
+    var resolver    : Resolver;
 
     public function copy(?instances,?factories,?parent,?resolver){
         var next            = new DI(parent == null ? this.parent : parent, resolver == null ? this.resolver : resolver);
@@ -27,10 +28,10 @@ import haxe.Constraints.Function;
             next.factories  = factories == null ? this.factories : factories;
         return next;
     }
-    public function new(?parent:DI,?resolver:String->Dynamic) {
+    public function new(?parent:DI,?resolver:Resolver) {
         this.id = Math.random();
         if(resolver == null){
-            resolver = Resolvers.resolve.bind(this);
+            resolver = Resolvers.resolve;
         }
         this.resolver  = resolver; 
         this.parent    = parent;
@@ -51,7 +52,7 @@ import haxe.Constraints.Function;
                 var callArgs    = [];
                 for (arg in args) {
                     var id = get_id(arg.t);
-                    callArgs.push(macro (@:privateAccess $self.resolver)($v{id}));
+                    callArgs.push(macro (@:privateAccess $self.resolver)($self,$v{id}));
                 }
                 var out =  macro (@:privateAccess $self._add)($v{id} , function() return ($factory)($a{callArgs}));
                 //trace( new haxe.macro.Printer().printExpr(out));
@@ -69,7 +70,7 @@ import haxe.Constraints.Function;
                 var callArgs = [];
                 for (arg in args) {
                     var id = get_id(arg.t);
-                    callArgs.push(macro (@:privateAccess $self.resolver)($v{id}));
+                    callArgs.push(macro (@:privateAccess $self.resolver)($self,$v{id}));
                 }
                 return macro $fn($a{callArgs});
             default:

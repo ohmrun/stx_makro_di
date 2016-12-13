@@ -15,12 +15,17 @@ class SubClass extends TestClass<String>{
     this.value = "Hello";
   }
 }
+class DependentOnChildUnitFromParent{
+  public function new(){
+    
+  }
+}
 class DependentOnValueInPreviousCompileUnit{
-  var sub : SubClass;
-  public function new(sub:SubClass){
-
+  var sub   : SubClass;
+  var other : DependentOnChildUnitFromParent;
+  public function new(sub:SubClass,other){
+    this.other = other;
     this.sub = sub;
-
   }
 }
 class Main{
@@ -62,11 +67,27 @@ class Main{
         );
     var di3 = di2.extend();
         di3.add(DependentOnValueInPreviousCompileUnit.new);
+        di3.add(DependentOnChildUnitFromParent.new);
         di3.run(
           function(d:DependentOnValueInPreviousCompileUnit){
             trace(d);
           }
         );
+        
+    var di4 = di3.extend();
+      di4.run(
+        function(d:WithNotFound){
+
+        }
+      );
   }
   
+}
+class NotFound{
+  public function new(){}
+}
+class WithNotFound extends DependentOnValueInPreviousCompileUnit{
+  public function new(sub:SubClass,other,notfound:NotFound){
+    super(sub,other);
+  }
 }
