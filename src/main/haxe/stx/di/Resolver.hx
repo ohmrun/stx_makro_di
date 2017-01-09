@@ -1,5 +1,6 @@
 package stx.di;
 
+import haxe.ds.Option;
 import stx.DI;
 
-typedef Resolver = DI -> String -> ?Resolver -> Dynamic;
+typedef Resolver = String -> (DI -> Dynamic);

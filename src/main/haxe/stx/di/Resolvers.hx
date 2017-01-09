@@ -1,25 +1,30 @@
 package stx.di;
 
+import stx.di.Fault;
+using stx.Pointwise;
+import stx.core.Y;
+
+using tink.CoreApi;
+
+import haxe.ds.Option;
+
 class Resolvers{
-  static public function resolve(target:DI,type:String,?resolver:Resolver):Dynamic {
-    if(resolver == null){
-        resolver = target.resolver;
-    }
-    //trace('resolve: ${target.id} $type');
-    var inst = target.instances.get(type);
-    if (inst == null) {
-        var factory = target.factories.get(type);
-        if (factory == null){
-            if(target.parent!=null){
-                inst = resolver(target.parent,type,resolver);
-            }else {
-                throw 'No factory defined for type $type';
+  static public function resolves():String->(DI->Dynamic){
+    return function(type:String):DI->Dynamic {
+        return function(target:DI){
+            //trace('resolve: ${target.id} $type ${target.factories}');
+            var inst = target.instances.get(type);
+            if (inst == null) {
+                var factory = target.factories.get(type);
+                if (factory == null){
+                    throw NotFound(type);
+                }else{
+                    target.instances.set(type,factory(target));
+                    inst = target.instances.get(type);
+                }
             }
-        }else{
-            target.instances.set(type,factory());
-            inst = target.instances.get(type);
+            return inst;
         }
     }
-    return inst;
   }
 }

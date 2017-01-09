@@ -1,0 +1,21 @@
+{
+    "name": "stx_di",
+    "license": "MIT",
+    "tags": [
+        "DI",
+        "dependency injection",
+        "inversion of control",
+        "ioc"
+    ],
+    "description": "Direct Injection based on code by nadako",
+    "contributors": [
+        "0b1kn00b"
+    ],
+    "releasenote": "simple, works",
+    "version": "0.0.1",
+    "url": "https://github.com/0b1kn00b/stx_pointwise",
+    "dependencies": {
+        "tink_macro": ""
+    },
+    "classPath": "src/main/haxe"
+}
