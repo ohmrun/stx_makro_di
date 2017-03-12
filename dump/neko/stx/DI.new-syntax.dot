@@ -1,0 +1,20 @@
+digraph graphname {
+n93 [shape=box,label="(93)\nthis.id = tmp\nvar tmp = haxe.Log.trace\nvar tmp = \"new: \" + this.id\ntmp(tmp, {fileName : \"src/main/haxe/stx/DI.hx\", lineNumber : 41, className : \"stx.DI\", methodName : \"new\"})\nthis.instances = new haxe.ds.StringMap()\nthis.factories = new haxe.ds.StringMap()"];
+n92 [shape=box,label="(92)\ntmp = id"];
+n91 [shape=box,label="(91)\ntmp = Math.random()"];
+n90 [shape=box,label="(90)\nthis.resolver = \"fun\"(88)\nhaxe.Log.trace(factories, {fileName : \"src/main/haxe/stx/DI.hx\", lineNumber : 39, className : \"stx.DI\", methodName : \"new\"})\nvar tmp\nvar tmp = id == null\n@:cond-branch tmp"];
+n90 -> n91[style="dashed",color="gray",label="then"];
+n90 -> n92[style="dashed",color="gray",label="else"];
+n90 -> n93[style="dashed",color="gray",label="next"];
+n89 [shape=box,label="<function-end>
+(89)"];
+n88 [shape=box,label="<function-begin>
+(88)\nvar tmp = stx.di.Resolvers.resolve(`this)\nreturn tmp(string)"];
+n87 [shape=box,label="<function-end>
+(87)"];
+n86 [shape=box,label="<function-begin>
+(86)"];
+n86 -> n90[style="dashed",color="gray",label="merge"];
+n1 [shape=box,label="<root>
+(1)"];
+}
