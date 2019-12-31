@@ -1,6 +1,11 @@
 -main Main
--x test.n
+--interp
+
+-lib hx3compat
+-lib stx_pkg
+-lib stx_reflect
+
 -cp src/main/haxe
--cp src/test/haxe
--lib tink_macro
--lib pointwise
+
+#-D test
+-D regression

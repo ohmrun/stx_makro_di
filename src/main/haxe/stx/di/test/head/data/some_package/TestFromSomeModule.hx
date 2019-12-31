@@ -1,15 +1,14 @@
-package some_package;
+package stx.di.test.head.data.some_package;
 
-import Main.TestContext;
-import stx.pkg.*;
 
 class TestFromSomeModuleModule{
   public function new(){}
   public function run(){
-    var a = Module.here();
-    trace(a);
-    trace(a.isSubmodule());
+    //var a = Module.here();
+    //trace(a);
+    //trace(a.isSubmodule());
   }
+  /*
   public function act(v:Context){
     var di = new DI();
         di.add(function():String{ return "hello";});
@@ -22,4 +21,5 @@ class TestFromSomeModuleModule{
           trace(ok);
         });
   }
+  */
 }

@@ -1,7 +1,6 @@
 package stx.pkg;
 
-using thx.Arrays;
-using thx.Strings;
+
 
 #if macro
   using tink.MacroApi;
@@ -18,7 +17,7 @@ abstract Package(String){
     return this;
   }
   public function parent(){
-    return new Package(this.split(".").dropRight(1).join("."));
+    return null;//new Package(this.split(".").dropRight(1).join("."));
   }
   public function isEmpty(){
     return this == "" || this == null;
