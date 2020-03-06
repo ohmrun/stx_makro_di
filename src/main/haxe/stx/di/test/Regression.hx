@@ -1,4 +1,4 @@
-package stx;
+package stx.di.test;
 
 import haxe.macro.Expr;
 

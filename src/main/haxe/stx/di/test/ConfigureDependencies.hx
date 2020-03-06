@@ -1,11 +1,12 @@
 package stx.di.test;
 
-@:stx.di.Register
-class ConfigureDependencies implements stx.di.Dependents{
-	public function new(){}
-	public function depends(di:DI){
-		di.add(
-			() -> new AbstractTest().prj()
-		);
+@:stx.Dependencies.register(__)
+class ConfigureDependencies extends stx.di.Module{
+	
+	public function main():Int{
+		return 0;
+	}
+	public function test(i:Int):MonkeyType{
+		return MonkeyMonkey;
 	}
 }

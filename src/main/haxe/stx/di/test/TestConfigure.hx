@@ -1,10 +1,8 @@
 package stx.di.test;
 
-
-
 @:stx.test.Register
-class TestConfigure extends TestCase{
-	public function testConfigure(){
+class TestConfigure extends utest.Test{
+	public function testModuleure(){
 		trace("TEST");
 	}
 }

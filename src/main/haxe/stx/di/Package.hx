@@ -1,23 +1,23 @@
 package stx.di;
 
-#if test
+#if (test=="stx_di")
   import stx.di.test.*;
+  import stx.di.test.ConfigureDependencies;
 #end
-
-typedef Injector  = stx.di.pack.Injector;
-typedef Resolvers = stx.di.pack.Resolvers;
-typedef DI        = stx.di.pack.DI;
 
 class Package extends Pack<stx.di.Package>{
   public function new(){
-    super();
+    super(__.here());
   }
-  #if test
-  static public function tests(){
-    return [
-      new RegressionTest(),
-      //new FirstTest()
-    ];
-  }
+  #if (test=="stx_di" && (!macro))
+    static public function tests(){
+      return [
+       // new RegressionTest(),
+        new FirstTest()
+      ];
+    }
   #end
+}
+enum WootDeWoot{
+  Frublub;
 }

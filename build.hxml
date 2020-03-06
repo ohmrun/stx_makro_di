@@ -1,11 +1,17 @@
+#!haxe
+
 -main Main
 --interp
 
--lib hx3compat
+-lib utest
+
+-lib tink_priority
+
 -lib stx_pkg
 -lib stx_reflect
 
 -cp src/main/haxe
 
-#-D test
+-D test
 #-D regression
+--macro stx.di.Plugin.use()

@@ -2,16 +2,6 @@ package stx.di.body;
 
 
 class Util{
-    #if macro
-        public static function get_id(type:haxe.macro.Type):String{
-            var id = Std.string(
-                haxe.macro.TypeTools.toComplexType(
-                    haxe.macro.Context.follow(type,true)
-                )
-            );
-            return id;
-        }
-    #end
 
     #if macro
     static public inline function print(d:Dynamic,?pos:haxe.PosInfos){

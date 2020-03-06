@@ -5,27 +5,27 @@ using Lambda;
 
 class Main{
   static function main(){
-    regress();
-    regress0();
+    #if regression
+      //regress();
+      //regress0();
+    #end
     
     #if test
-      var runner = new haxe.unit.TestRunner();
-      stx.di.Package.tests().iter(
-        (x) -> runner.add(x)
+      utest.UTest.run(
+        cast stx.di.Package.tests()
       );
-      runner.run();
     #end
   }
-  static function regress(){
-    var regression = new Regressed();
-    regression.scoot();
-    regression.toot();
+  // static function regress(){
+  //   var regression = new Regressed();
+  //   regression.scoot();
+  //   regression.toot();
     
-    Regressed.tooter();
-  }
-  static function regress0(){
-    var regression = new stx.Regression();
-        regression.scoot();
-        regression.toot();
-  }
+  //   Regressed.tooter();
+  // }
+  // static function regress0(){
+  //   var regression = new stx.Regression();
+  //       regression.scoot();
+  //       regression.toot();
+  // }
 }
