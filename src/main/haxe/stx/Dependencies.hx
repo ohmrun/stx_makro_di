@@ -21,7 +21,7 @@ using stx.di.DI;
   static function get_instance(){
     return __.option(instance).def(
       () -> {
-        trace("INITIALIZE");
+        //trace("INITIALIZE");
         instance = new Dependencies();
         instance.initialize();
         return instance;
@@ -30,22 +30,19 @@ using stx.di.DI;
   }
   private static var initialized                : Bool = false;
   private function initialize(){
-    #if macro
-    trace("OH NOO");
-    #end
     if(!initialized){
       initialized   = true;
       var registry  = new stx.di.Registry();
-      trace(registry.length);
+      //trace(registry.length);
       var queue     = new tink.priority.Queue();
       for (clazz in registry){
-        trace(clazz);
+        //trace(clazz);
         var configurator  = std.Type.createEmptyInstance(clazz);
             configurator.apply(queue);
       }
       for(app in queue){
         var def = __.definition(app);
-        trace('app: $app');
+        //trace('app: $app');
         app.react(instance.deferred);
       }
       var overrides = std.Type.createEmptyInstance(stx.Overrides);
@@ -53,10 +50,7 @@ using stx.di.DI;
     }
   }
   private function register(cl:Class<stx.di.core.Module>){
-    #if macro
-    trace("OH NO");
-    #end
-    trace('REGISTER $cl');
+    //trace('stx.Dependencies.register $cl');
     new stx.di.Registry().push(cl);
   }
 }

@@ -14,8 +14,8 @@ import stx.di.ResolverDef;
 		return factories.exists(id);
 	}
 	@:noCompletion function _add(id:String, factory:DI->Dynamic, ?force:Bool = false):Void {
-		trace('_add $id ${this.id}');
-    trace(factories);
+		//trace('_add $id ${this.id}');
+    //trace(factories);
 		if (factories.exists(id) && !force)
 			throw 'Duplicate factory declaration for $id';
 		factories.set(id, factory);

@@ -113,7 +113,7 @@ class Plugin{
         args : [],
         ret  : null,
         expr : macro {
-          trace($e{id});
+          //trace($e{id});
           new stx.di.Registry().push($e{id});
         }
       }

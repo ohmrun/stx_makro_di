@@ -21,7 +21,7 @@ class Injectors{
         return id;
       }
       function rec(t:Type) {
-        trace(t);
+        //trace(t);
         return switch (t) {
           case TFun(args, ret):
             var callArgs = [];
@@ -60,7 +60,7 @@ class Injectors{
               var callArgs = [];
               for (arg in args) {
                 var id    = get_id(arg.t);
-                trace('ID = $id');
+                //trace('ID = $id');
                 var expr  = macro(@:privateAccess $self.resolver)($v{id});
                 callArgs.push(expr);
               }
@@ -70,7 +70,7 @@ class Injectors{
                   });
               }
               var access = macro(@:privateAccess $self._add);
-              trace(id);
+              //trace(id);
               var out = macro $access($v{id}, function(di) {
                 var values = $fn(di);
                 // stx.di.Util.print('_run $id');
@@ -85,7 +85,7 @@ class Injectors{
           }
         }
         var type = haxe.macro.Context.typeof(factory);
-        trace(type);
+        //trace(type);
         return rec(type);
       }
 }
