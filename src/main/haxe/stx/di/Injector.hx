@@ -1,6 +1,6 @@
-package stx.di.pack;
+package stx.di;
 
-import stx.di.body.Util.*;
+import stx.di.Util.*;
 
 import haxe.macro.Expr;
 import haxe.macro.Type;

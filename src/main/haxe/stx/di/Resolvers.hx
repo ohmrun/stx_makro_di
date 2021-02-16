@@ -1,17 +1,16 @@
-package stx.di.pack;
+package stx.di;
 
 class Resolvers{
-  @:access(stx.di.pack) static public function resolves():String->(DI->Dynamic){
+  @:access(stx.di) static public function resolves():String->(DI->Dynamic){
     return function(type:String):DI->Dynamic {
-        //trace(type);
+        //throw(type);
         return function(target:DI){
             //trace('resolve: ${target.id} $type ${target.factories}');
             var inst = target.instances.get(type);
             // trace(target.factories);
-            // trace(inst);
+            //trace(type);
             if (inst == null) {
                 var factory = target.factories.get(type);
-                // trace(factory);
                 if (factory == null){
                     throw '"$type" not found: (${target.factories})';
                 }else{

@@ -1,12 +1,12 @@
-package stx.di.pack;
+package stx.di;
 
-import stx.di.body.Util;
+import stx.di.Util;
 
 import haxe.ds.StringMap;
 
-import stx.di.pack.Injector;
-import stx.di.pack.Resolvers;
-import stx.di.head.data.Resolver;
+import stx.di.Injector;
+import stx.di.Resolvers;
+import stx.di.ResolverDef;
 
 @:allow(stx.di) class DI{
 
@@ -14,7 +14,8 @@ import stx.di.head.data.Resolver;
 		return factories.exists(id);
 	}
 	@:noCompletion function _add(id:String, factory:DI->Dynamic, ?force:Bool = false):Void {
-		// print('_add $id');
+		trace('_add $id ${this.id}');
+    trace(factories);
 		if (factories.exists(id) && !force)
 			throw 'Duplicate factory declaration for $id';
 		factories.set(id, factory);
@@ -70,6 +71,6 @@ import stx.di.head.data.Resolver;
     return out;
   }
   public function toString(){
-    return id;
+    return '$id';
   }
 }

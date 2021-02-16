@@ -1,4 +1,4 @@
-package stx.di.body;
+package stx.di;
 
 
 class Util{

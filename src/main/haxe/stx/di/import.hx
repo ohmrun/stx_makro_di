@@ -1,6 +1,9 @@
 package stx.di;
 
-import stx.core.head.Data;
-
 using stx.Pico;
 using stx.Nano;
+using stx.Pkg;
+
+using stx.di.Core;
+
+import stx.makro.core.Module in MModule;

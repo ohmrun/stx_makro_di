@@ -11,13 +11,11 @@ using tink.MacroApi;
 
 import stx.makro.alias.StdExpr;
 
-import stx.core.Package;
-import stx.ds.Package;
-
-using stx.ds.Lift;
-using stx.core.Lift;
-using stx.reflect.Lift;
-using stx.makro.Lift;
+using stx.Pico;
+using stx.Nano;
+using stx.Ds;
+using stx.Makro;
+using stx.makro.Type;
 
 import tink.priority.ID;
 import tink.MacroApi.ClassBuilder;
@@ -25,39 +23,50 @@ import tink.SyntaxHub;
 
 class Plugin{
   @:access(tink.priority.ID) static public function use(){
-    var here = stx.core.Lift.here(__);
+    trace('use: stx.Di');
+    stx.Dependencies;
+    var here = __.here();
     SyntaxHub.classLevel.add(
       {
         data  : apply,  
         id    : __.option(here).map(Std.string).defv(null)
       }
     );
+    tink.SyntaxHub.transformMain.add(
+      {
+        data : (expr:Expr) -> {
+          return {
+            pos  : __.here(),
+            expr : EBlock([macro @:privateAccess stx.Dependencies.instance,expr]) 
+          };
+        }
+      }
+    );
   }
   static function apply(cb:ClassBuilder):Bool{
     var printer   = new Printer();
     var target    = cb.target;
-    return false;
+
     var should = target.makro().interfaces(true).any(
       (ref) -> {
-        var a = stx.makro.type.body.BaseTypes.getModule(ref.t.get());
-        var b : Module = {
-          pack : "stx.di.head.data".split("."),
-          name : "Module"
-        }
+        var a = stx.makro.type.BaseType._.getModule(ref.t.get());
+        var b = stx.makro.core.Module.fromIdentDef(Identifier.lift("stx.di.core.ModuleApi").toIdentDef());
         var c = a.equals(cast b);
         return c;
       }
     );
+
     if(!should){
       return should;
     }
-       should  = should && !(stx.makro.type.body.BaseTypes.getModule(target).equals({pack:"stx.di".split('.'),name:"Module"}));
+       should  = should && !(stx.makro.type.BaseType._.getModule(target).equals({pack:"stx.di.core".split('.'),name:"Module"}));
     if(should){   
+      //trace('should: $target');
       var arr = [];
       for( next in cb ){
         switch(
           [
-            ["react","apply"].ds().any((x) -> next.name == x),
+            ["react","apply"].any((x) -> next.name == x),
             new EnumValue(next.kind).alike(FFun(null))
           ]
         ){
@@ -68,7 +77,7 @@ class Plugin{
       var exprs : StdExpr = arr.map(
         (member) -> {
           var pos   = Context.currentPos();
-          var expr = macro stx.di.body.Injectors.add(
+          var expr  = macro stx.di.Injectors.add(
             $i{"di"},
             $i{member.name}
           );
@@ -78,11 +87,11 @@ class Plugin{
 
       switch(cb.memberByName("react")){
         case Success(v) : cb.removeMember(v);
-        default : 
+        default         : 
       };
 
       var func : Function = {
-        args : [{name : "di",type : MacroStringTools.toComplex("stx.di.pack.DI")}],
+        args : [{name : "di",type : MacroStringTools.toComplex("stx.di.DI")}],
         ret  : null,
         expr : exprs
       }
@@ -95,7 +104,29 @@ class Plugin{
       member.isPublic   = true;
 
       cb.addMember(member);
+      var btype           = cb.target.makro().toBaseType(); 
+      var id              = 
+        MacroStringTools.toFieldExpr(
+          new stx.makro.core.Module({ name : btype.name, pack : btype.pack, module : __.option(new haxe.io.Path(btype.module)) }).toString().split(".")
+        ); 
+      var init_func : Function = {
+        args : [],
+        ret  : null,
+        expr : macro {
+          trace($e{id});
+          new stx.di.Registry().push($e{id});
+        }
+      }
+      var init : Member = {
+        name    : "__init__",
+        kind    : FFun(init_func),
+        pos     : __.here(),
+        access  : [AStatic]
+      }
+      cb.addMember(init);
       trace('build: ${cb.target.pack.join(".")}.${cb.target.name}');
+      //trace(cb.target);
+      //trace(@:privateAccess cb.memberList);
     }
     return should;
   }

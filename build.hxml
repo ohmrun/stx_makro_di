@@ -3,12 +3,30 @@
 -main Main
 --interp
 
--lib utest
-
+#-lib utest
 -lib tink_priority
+
+-lib tink_core
+-lib tink_macro
+-lib tink_syntaxhub
+
+
+
+-lib stx_pico
+-lib stx_nano
+-lib stx_ds
+-lib stx_test
+-lib stx_pkg
+
+-lib stx_makro
+#needs to operate before stx_makro
+-lib stx_di
+
+#-lib stx_makro;
+#-lib stx_bake
 
 -cp src/main/haxe
 
--D test
+-D test=stx_di
 #-D regression
---macro stx.di.Plugin.use()
+#--macro stx.di.Plugin.use()

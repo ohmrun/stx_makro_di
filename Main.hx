@@ -1,19 +1,19 @@
 //import stx.di.Package;
 
+import stx.Dependencies;
 
 using Lambda;
 
 class Main{
   static function main(){
+    trace("main");
     #if regression
       //regress();
       //regress0();
     #end
     
     #if test
-      utest.UTest.run(
-        cast stx.di.Package.tests()
-      );
+      stx.di.Test.main();
     #end
   }
   // static function regress(){

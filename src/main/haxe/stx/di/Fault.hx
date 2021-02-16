@@ -1,4 +1,4 @@
-package stx.di.head.data;
+package stx.di;
 
 enum Fault{
   NotFound(name:String);

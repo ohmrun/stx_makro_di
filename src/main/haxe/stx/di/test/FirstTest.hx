@@ -1,7 +1,5 @@
 package stx.di.test;
 
-import stx.Dependencies.*;
-
 
 class FirstTest extends utest.Test{
   public function testLift(){
@@ -93,28 +91,28 @@ class FirstTest extends utest.Test{
   //       );
   // }
   public function testMonkey(){
-    //trace(new stx.di.pack.Registry());
+    //trace(new stx.di.Registry());
     #if (!macro)
-      derive(
+      Di.derive(
         (x:MonkeyType)->{
           trace(x);
         }
       );
-      derive(
-        (str:String) -> {
-          trace(str);
-        }
-      );
+      // Injectors.run(
+      //   (str:String) -> {
+      //     trace(str);
+      //   }
+      // );
     #end
   }
 }
 
 @:stx.Dependencies.register(__)
-class FirstTestModule extends stx.di.Module{
+class FirstTestModule extends stx.di.core.Module{
 
 }
 @:stx.Dependencies.register(__)
-class NotherModule extends stx.di.Module{
+class NotherModule extends stx.di.core.Module{
   override public function react(di){
     
   }

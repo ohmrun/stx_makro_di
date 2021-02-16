@@ -1108,8 +1108,8 @@ Typing macro Sys.__init__
 Parsed /usr/local/share/haxe/std/eval/_std/sys/io/FileOutput.hx
 Parsed /usr/local/share/haxe/std/sys/io/FileSeek.hx
 Parsed /usr/local/share/haxe/std/eval/_std/sys/io/FileInput.hx
-Typing macro stx.di.pack.Injector.new
-Typing macro stx.di.pack.Injector.run
+Typing macro stx.di.Injector.new
+Typing macro stx.di.Injector.run
 Typing macro haxe.ds.List.new
 Typing macro haxe.ds.List.add
 Typing macro haxe.ds._List.ListNode.create
@@ -2410,7 +2410,7 @@ Typing macro stx.reflect.MetasLift.locals
 Typing macro stx.reflect.MetasLift.globals
 Typing macro stx.reflect.MetasClassLift.globals
 Typing macro stx.reflect.ClassReflectLift.definition
-Typing macro stx.di.pack.Resolvers.resolves
+Typing macro stx.di.Resolvers.resolves
 Typing macro stx.di.DI.tootksy
 Typing macro stx.di.DI.add
 Typing macro stx.di.DI._has
@@ -2874,7 +2874,7 @@ Typing haxe.macro.Context.onMacroContextReused
 Typing haxe.macro.Context.includeFile
 Typing haxe.macro.Context.sExpr
 Typing stx.di.body.Util.print
-Typing stx.di.pack.Injector.new
+Typing stx.di.Injector.new
 Typing haxe.iterators.DynamicAccessIterator.new
 Typing haxe._DynamicAccess.DynamicAccess_Impl_.keys
 Typing haxe.iterators.DynamicAccessIterator.hasNext
@@ -4075,7 +4075,7 @@ Typing haxe.iterators.MapKeyValueIterator.hasNext
 Typing haxe.iterators.MapKeyValueIterator.next
 Typing stx.di.DI.injector
 Typing stx.di.DI.resolver
-Typing stx.di.pack.Resolvers.resolves
+Typing stx.di.Resolvers.resolves
 Parsed src/main/haxe/stx/di/Package.hx
 Typing macro stx.di.Package.boot
 Typing macro stx.di.Package.tests
