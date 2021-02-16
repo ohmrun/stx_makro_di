@@ -13,13 +13,19 @@
     "version": "0.0.1",
     "url": "https://github.com/ohmrun/stx_di",
     "dependencies": {
-        "tink_core"     : "git:https://github.com/haxetink/tink_core.git",
-        "hx3compat"     : "git:https://github.com/HaxeFoundation/hx3compat.git",
-        "stx_pico"      : "git:https://github.com/ohmrun/stx_pico.git",
-        "stx_nano"      : "git:https://github.com/ohmrun/stx_nano.git",
-        "stx_pkg"       : "git:https://github.com/ohmrun/stx_pkg.git",
-        "stx_makro"     : "git:https://github.com/ohmrun/stx_makro.git",
-        "stx_bake"      : "git:https://github.com/ohmrun/stx_bake.git"
+        "tink_core"         : "git:https://github.com/haxetink/tink_core.git",
+        "tink_macro"        : "git:https://github.com/haxetink/tink_macro.git",
+        "tink_syntaxhub"    : "git:https://github.com/haxetink/tink_syntaxhub.git",
+        "tink_priority"     : "git:https://github.com/haxetink/tink_priority.git",
+        "hx3compat"         : "git:https://github.com/HaxeFoundation/hx3compat.git",
+        "stx_pico"          : "git:https://github.com/ohmrun/stx_pico.git",
+        "stx_nano"          : "git:https://github.com/ohmrun/stx_nano.git",
+        "stx_pkg"           : "git:https://github.com/ohmrun/stx_pkg.git",
+        "stx_fn"            : "git:https://github.com/ohmrun/stx_fn.git",
+        "stx_assert"        : "git:https://github.com/ohmrun/stx_assert.git",
+        "stx_ds"            : "git:https://github.com/ohmrun/stx_ds.git",
+        "stx_makro"         : "git:https://github.com/ohmrun/stx_makro.git",
+        "stx_bake"          : "git:https://github.com/ohmrun/stx_bake.git"
     },
     "classPath": "src/main/haxe"
 }
