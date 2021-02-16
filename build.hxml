@@ -7,9 +7,6 @@
 
 -lib tink_priority
 
--lib stx_pkg
--lib stx_reflect
-
 -cp src/main/haxe
 
 -D test
