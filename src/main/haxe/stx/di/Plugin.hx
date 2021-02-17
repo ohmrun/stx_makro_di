@@ -24,7 +24,7 @@ import tink.SyntaxHub;
 
 class Plugin{
   @:access(tink.priority.ID) static public function use(){
-    __.log().debug('use: stx.pi.Plugin');
+    __.log().debug('use: stx.di.Plugin');
     stx.Dependencies;
     var here = __.here();
     SyntaxHub.classLevel.add(

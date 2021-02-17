@@ -49,8 +49,10 @@ using stx.di.DI;
           overrides.react(@:privateAccess instance.deferred);
     }
   }
+  #if macro
   private function register(cl:Class<stx.di.core.Module>){
     //trace('stx.Dependencies.register $cl');
     new stx.di.Registry().push(cl);
   }
+  #end
 }

@@ -9,13 +9,14 @@ import stx.di.DI;
 import stx.di.Util;
 
 class Injectors{
+  #if macro
     @:noUsing static public function run(fn:Expr):Expr {
       var self    = macro @:privateAccess stx.Dependencies.instance.deferred.injector();
       var printer = new haxe.macro.Printer();
       function get_id(type:haxe.macro.Type):String{
         var id = Std.string(
           haxe.macro.TypeTools.toComplexType(
-            haxe.macro.Context.followWithAbstracts(type)
+            haxe.macro.Context.follow(type,true)
           )
         );
         return id;
@@ -41,9 +42,10 @@ class Injectors{
         }
       }
       return macro { 
-        ${rec(Context.typeof(fn))};
+        ${rec(haxe.macro.Context.typeof(fn))};
       }
     }
+    #end
     inline static public macro function add(self:haxe.macro.Expr, factory:haxe.macro.Expr, force:Bool = false):haxe.macro.Expr {
       function get_id(type:haxe.macro.Type):String{
         var id = Std.string(
