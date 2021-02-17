@@ -21,6 +21,7 @@
         "stx_pico"          : "git:https://github.com/ohmrun/stx_pico.git",
         "stx_nano"          : "git:https://github.com/ohmrun/stx_nano.git",
         "stx_pkg"           : "git:https://github.com/ohmrun/stx_pkg.git",
+        "stx_log"           : "git:https://github.com/ohmrun/stx_log.git",
         "stx_fn"            : "git:https://github.com/ohmrun/stx_fn.git",
         "stx_assert"        : "git:https://github.com/ohmrun/stx_assert.git",
         "stx_ds"            : "git:https://github.com/ohmrun/stx_ds.git",

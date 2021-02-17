@@ -14,6 +14,7 @@ import stx.makro.alias.StdExpr;
 using stx.Pico;
 using stx.Nano;
 using stx.Ds;
+using stx.Log;
 using stx.Makro;
 using stx.makro.Type;
 
@@ -23,7 +24,7 @@ import tink.SyntaxHub;
 
 class Plugin{
   @:access(tink.priority.ID) static public function use(){
-    trace('use: stx.Di');
+    __.log().debug('use: stx.pi.Plugin');
     stx.Dependencies;
     var here = __.here();
     SyntaxHub.classLevel.add(
