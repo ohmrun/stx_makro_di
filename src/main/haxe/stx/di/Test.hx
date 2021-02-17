@@ -7,7 +7,7 @@ package stx.di;
 #end
 
 class Test{
-  #if (test=="stx_di" && (!macro))
+  #if (test=="stx_di")
     static public function main(){
         stx.Test.test([
           // new RegressionTest(),

@@ -15,7 +15,7 @@ class Injectors{
       function get_id(type:haxe.macro.Type):String{
         var id = Std.string(
           haxe.macro.TypeTools.toComplexType(
-            haxe.macro.Context.follow(type,true)
+            haxe.macro.Context.followWithAbstracts(type)
           )
         );
         return id;
