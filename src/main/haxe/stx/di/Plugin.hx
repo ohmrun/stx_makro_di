@@ -125,7 +125,7 @@ class Plugin{
         access  : [AStatic]
       }
       cb.addMember(init);
-      trace('build: ${cb.target.pack.join(".")}.${cb.target.name}');
+      __.log().info('build: ${cb.target.pack.join(".")}.${cb.target.name}');
       //trace(cb.target);
       //trace(@:privateAccess cb.memberList);
     }
