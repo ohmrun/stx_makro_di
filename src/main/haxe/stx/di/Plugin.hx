@@ -51,7 +51,7 @@ class Plugin{
     var should = target.makro().interfaces(true).any(
       (ref) -> {
         var a = stx.makro.type.BaseType._.getModule(ref.t.get());
-        var b = stx.makro.core.Module.fromIdentDef(Identifier.lift("stx.di.core.ModuleApi").toIdentDef());
+        var b = stx.makro.core.Module.fromIdentDef(Ident.fromIdentifier(Identifier.lift("stx.di.core.ModuleApi")));
         var c = a.equals(cast b);
         return c;
       }
@@ -60,7 +60,7 @@ class Plugin{
     if(!should){
       return should;
     }
-       should  = should && !(stx.makro.type.BaseType._.getModule(target).equals({pack:"stx.di.core".split('.'),name:"Module"}));
+       should  = should && !(stx.makro.type.BaseType._.getModule(target).equals({pack:Way.lift("stx.di.core".split('.')),name:"Module"}));
     if(should){   
       //trace('should: $target');
       var arr = [];
@@ -108,7 +108,7 @@ class Plugin{
       var btype           = cb.target.makro().toBaseType(); 
       var id              = 
         MacroStringTools.toFieldExpr(
-          new stx.makro.core.Module({ name : btype.name, pack : btype.pack, module : __.option(new haxe.io.Path(btype.module)) }).toString().split(".")
+          new stx.makro.core.Module({ name : btype.name, pack : Way.lift(btype.pack), module : __.option(new haxe.io.Path(btype.module)) }).toString().split(".")
         ); 
       var init_func : Function = {
         args : [],

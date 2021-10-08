@@ -18,7 +18,7 @@ class Util{
     }
     #else
     static public function print(d:Dynamic,?pos:haxe.PosInfos){
-        Sys.println(Std.string(d));
+        std.Sys.println(Std.string(d));
     }
     #end
 }
