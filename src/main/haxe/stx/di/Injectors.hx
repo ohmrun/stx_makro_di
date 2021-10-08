@@ -8,12 +8,13 @@ import stx.di.DI;
 import stx.di.Util;
 
 class Injectors{
+  static var printer = new haxe.macro.Printer();
   #if macro
     @:noUsing static public function run(fn:Expr):Expr {
       var self    = macro @:privateAccess stx.Dependencies.instance.deferred.injector();
       var printer = new haxe.macro.Printer();
       function get_id(type:haxe.macro.Type):String{
-        var id = Std.string(
+        var id = printer.printComplexType(
           haxe.macro.TypeTools.toComplexType(
             haxe.macro.Context.follow(type,true)
           )
@@ -47,7 +48,7 @@ class Injectors{
     #end
     inline static public macro function add(self:haxe.macro.Expr, factory:haxe.macro.Expr, force:Bool = false):haxe.macro.Expr {
       function get_id(type:haxe.macro.Type):String{
-        var id = Std.string(
+        var id = printer.printComplexType(
           haxe.macro.TypeTools.toComplexType(
             haxe.macro.Context.follow(type,true)
           )
@@ -85,8 +86,11 @@ class Injectors{
               throw new Error("Factory should be a function", factory.pos);
           }
         }
-        var type = haxe.macro.Context.typeof(factory);
-        //trace(type);
+        var type    = haxe.macro.Context.typeof(factory);
+        var printer = new haxe.macro.Printer();
+        var ct      = haxe.macro.TypeTools.toComplexType(type);
+        var string  = printer.printComplexType(ct);
+        //trace(string);
         return rec(type);
       }
 }

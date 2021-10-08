@@ -1,9 +1,10 @@
 package stx.di;
 
+import stx.fn.Thunk;
+
 class Resolvers{
   @:access(stx.di) static public function resolves():String->(DI->Dynamic){
     return function(type:String):DI->Dynamic {
-        //throw(type);
         return function(target:DI){
             //trace('resolve: ${target.id} $type ${target.factories}');
             var inst = target.instances.get(type);
@@ -14,6 +15,10 @@ class Resolvers{
                 if (factory == null){
                     throw '"$type" not found: (${target.factories})';
                 }else{
+                    // var result : Dynamic = Thunk._.cache(() -> factory(target))();
+                    // if(result == null){
+                    //   throw "no result";
+                    // }
                     target.instances.set(type,factory(target));
                     inst = target.instances.get(type);
                 }
