@@ -1,7 +1,7 @@
 package stx.di.test;
 
 
-class FirstTest extends utest.Test{
+class FirstTest extends TestCase{
   public function testLift(){
     //inject(()->("hello":String));/
     //trace(stx.Dependencies.map);

@@ -1,5 +1,6 @@
 package stx.di;
 
+using stx.Test;
 
 #if (test=="stx_di")
   import stx.di.test.*;
@@ -9,10 +10,10 @@ package stx.di;
 class Test{
   #if (test=="stx_di")
     static public function main(){
-        stx.Test.test([
-          // new RegressionTest(),
-          new FirstTest()
-        ],[]);
+        // __.test([
+        //   // new RegressionTest(),
+        //   //new FirstTest()
+        // ],[]);
     }
   #end
 }

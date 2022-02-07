@@ -3,6 +3,7 @@
 import stx.Dependencies;
 
 using Lambda;
+using stx.Nano;
 
 class Main{
   static function main(){

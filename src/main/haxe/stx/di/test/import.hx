@@ -1,7 +1,6 @@
 package stx.di.test;
 
-import utest.Assert.*;
-import utest.Assert;
+using stx.Test;
 
 import stx.di.Package;
 import stx.di.DI;

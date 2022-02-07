@@ -1,15 +1,12 @@
 #!haxe
+-cp src/main/haxe
 
--main Main
---interp
+-D test=stx_di
 
-#-lib utest
 -lib tink_priority
-
 -lib tink_core
 -lib tink_macro
 -lib tink_syntaxhub
-
 
 
 -lib stx_pico
@@ -18,16 +15,17 @@
 -lib stx_test
 -lib stx_log
 -lib stx_pkg
+-lib stx_test
 
 -lib stx_makro
+-lib stx_di 
 #needs to operate before stx_makro
 -lib stx_di
 
-#-lib stx_makro;
-#-lib stx_bake
 
--cp src/main/haxe
+-main Main
+--interp
 
--D test=stx_di
+
 #-D regression
 #--macro stx.di.Plugin.use()
