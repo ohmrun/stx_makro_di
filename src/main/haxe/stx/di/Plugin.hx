@@ -50,7 +50,7 @@ class Plugin{
 
     var should = target.makro().interfaces(true).any(
       (ref) -> {
-        var a = stx.makro.type.BaseType._.getModule(ref.t.get());
+        var a = HBaseType._.getModule(ref.t);
         var b = stx.makro.core.Module.fromIdentDef(Ident.fromIdentifier(Identifier.lift("stx.di.core.ModuleApi")));
         var c = a.equals(cast b);
         return c;
@@ -60,7 +60,7 @@ class Plugin{
     if(!should){
       return should;
     }
-       should  = should && !(stx.makro.type.BaseType._.getModule(target).equals({pack:Way.lift("stx.di.core".split('.')),name:"Module"}));
+       should  = should && !(HBaseType._.getModule(target).equals({pack:Way.lift("stx.di.core".split('.')),name:"Module"}));
     if(should){   
       //trace('should: $target');
       var arr = [];
