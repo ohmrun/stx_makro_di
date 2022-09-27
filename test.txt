@@ -929,7 +929,7 @@ Typing macro haxe.macro.Context.currentPos
 Typing macro haxe.macro.Context.getExpectedType
 Typing macro haxe.macro.Context.getCallArguments
 Typing macro haxe.macro.Context.getLocalClass
-Typing macro haxe.macro.Context.getLocalModule
+Typing macro haxe.macro.Context.getLocalAssembly
 Typing macro haxe.macro.Context.getLocalType
 Typing macro haxe.macro.Context.getLocalMethod
 Typing macro haxe.macro.Context.getLocalUsing
@@ -940,7 +940,7 @@ Typing macro haxe.macro.Context.defined
 Typing macro haxe.macro.Context.definedValue
 Typing macro haxe.macro.Context.getDefines
 Typing macro haxe.macro.Context.getType
-Typing macro haxe.macro.Context.getModule
+Typing macro haxe.macro.Context.getAssembly
 Typing macro haxe.macro.Context.parse
 Typing macro haxe.macro.Context.parseInlineString
 Typing macro haxe.macro.Context.makeExpr
@@ -962,13 +962,13 @@ Typing macro haxe.macro.Context.getResources
 Typing macro haxe.macro.Context.addResource
 Typing macro haxe.macro.Context.getBuildFields
 Typing macro haxe.macro.Context.defineType
-Typing macro haxe.macro.Context.defineModule
+Typing macro haxe.macro.Context.defineAssembly
 Typing macro haxe.macro.Context.getTypedExpr
 Typing macro haxe.macro.Context.storeTypedExpr
 Typing macro haxe.macro.Context.storeExpr
-Typing macro haxe.macro.Context.registerModuleDependency
+Typing macro haxe.macro.Context.registerAssemblyDependency
 Typing macro haxe.macro.Context.timer
-Typing macro haxe.macro.Context.registerModuleReuseCall
+Typing macro haxe.macro.Context.registerAssemblyReuseCall
 Typing macro haxe.macro.Context.onMacroContextReused
 Typing macro haxe.macro.Context.includeFile
 Typing macro haxe.macro.Context.sExpr
@@ -2827,7 +2827,7 @@ Typing haxe.macro.Context.currentPos
 Typing haxe.macro.Context.getExpectedType
 Typing haxe.macro.Context.getCallArguments
 Typing haxe.macro.Context.getLocalClass
-Typing haxe.macro.Context.getLocalModule
+Typing haxe.macro.Context.getLocalAssembly
 Typing haxe.macro.Context.getLocalType
 Typing haxe.macro.Context.getLocalMethod
 Typing haxe.macro.Context.getLocalUsing
@@ -2841,7 +2841,7 @@ Typing haxe.macro.Context.defined
 Typing haxe.macro.Context.definedValue
 Typing haxe.macro.Context.getDefines
 Typing haxe.macro.Context.getType
-Typing haxe.macro.Context.getModule
+Typing haxe.macro.Context.getAssembly
 Typing haxe.macro.Context.parse
 Typing haxe.macro.Context.parseInlineString
 Typing haxe.macro.Context.makeExpr
@@ -2863,13 +2863,13 @@ Typing haxe.macro.Context.getResources
 Typing haxe.macro.Context.addResource
 Typing haxe.macro.Context.getBuildFields
 Typing haxe.macro.Context.defineType
-Typing haxe.macro.Context.defineModule
+Typing haxe.macro.Context.defineAssembly
 Typing haxe.macro.Context.getTypedExpr
 Typing haxe.macro.Context.storeTypedExpr
 Typing haxe.macro.Context.storeExpr
-Typing haxe.macro.Context.registerModuleDependency
+Typing haxe.macro.Context.registerAssemblyDependency
 Typing haxe.macro.Context.timer
-Typing haxe.macro.Context.registerModuleReuseCall
+Typing haxe.macro.Context.registerAssemblyReuseCall
 Typing haxe.macro.Context.onMacroContextReused
 Typing haxe.macro.Context.includeFile
 Typing haxe.macro.Context.sExpr

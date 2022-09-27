@@ -7,15 +7,7 @@ using stx.Nano;
 
 class Main{
   static function main(){
-    trace("main");
-    #if regression
-      //regress();
-      //regress0();
-    #end
-    
-    #if test
-      stx.di.Test.main();
-    #end
+
   }
   // static function regress(){
   //   var regression = new Regressed();

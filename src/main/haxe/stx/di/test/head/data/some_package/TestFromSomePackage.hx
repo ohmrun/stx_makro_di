@@ -7,7 +7,7 @@ class TestFromSomePackage{
     // );
   }
   public function run(){
-    //var a = Module.here();
+    //var a = Assembly.here();
     //trace(a);
     //trace(a.isSubmodule());
     //trace(a.getPackage());
@@ -17,6 +17,6 @@ class TestFromSomePackage{
     var di = new DI();
         di.add(function():String{ return "hello";});
         di.add(function():Int{ return 123;});
-    v.set(Module.here(),di);*/
+    v.set(Assembly.here(),di);*/
   //}
 }

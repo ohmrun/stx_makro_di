@@ -1,6 +1,6 @@
 package stx;
 
-@:keep class Overrides extends stx.di.core.Module{
+@:keep class Overrides extends stx.di.Assembly{
   override public function react(_){
     
   }

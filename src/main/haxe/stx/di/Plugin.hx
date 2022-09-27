@@ -24,7 +24,7 @@ import tink.SyntaxHub;
 
 class Plugin{
   @:access(tink.priority.ID) static public function use(){
-    __.log().debug('use: stx.di.Plugin');
+    __.log().info('use: stx.di.Plugin');
     stx.Dependencies;
     var here = __.here();
     SyntaxHub.classLevel.add(
@@ -51,7 +51,7 @@ class Plugin{
     var should = target.makro().interfaces(true).any(
       (ref) -> {
         var a = HBaseType._.getModule(ref.t);
-        var b = stx.makro.core.Module.fromIdentDef(Ident.fromIdentifier(Identifier.lift("stx.di.core.ModuleApi")));
+        var b = stx.makro.core.Module.fromIdentDef(Ident.fromIdentifier(Identifier.lift("stx.di.AssemblyApi")));
         var c = a.equals(cast b);
         return c;
       }
@@ -60,9 +60,10 @@ class Plugin{
     if(!should){
       return should;
     }
-       should  = should && !(HBaseType._.getModule(target).equals({pack:Way.lift("stx.di.core".split('.')),name:"Module"}));
+
+       should  = should && !(HBaseType._.getModule(target).equals({pack:Way.lift("stx.di".split('.')),name:"Assembly"}));
     if(should){   
-      //trace('should: $target');
+      //__.log().debug('should: ${target.module}');
       var arr = [];
       for( next in cb ){
         switch(

@@ -1,6 +1,6 @@
 package stx.di.test.head.data;
 
-class NotInModule{
+class NotInAssembly{
   public function new(){
     ok = true;
   }

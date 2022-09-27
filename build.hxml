@@ -18,7 +18,6 @@
 -lib stx_test
 
 -lib stx_makro
--lib stx_di 
 #needs to operate before stx_makro
 -lib stx_di
 

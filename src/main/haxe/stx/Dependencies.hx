@@ -50,7 +50,7 @@ using stx.di.DI;
     }
   }
   #if macro
-  private function register(cl:Class<stx.di.core.Module>){
+  private function register(cl:Class<stx.di.Assembly>){
     //trace('stx.Dependencies.register $cl');
     new stx.di.Registry().push(cl);
   }

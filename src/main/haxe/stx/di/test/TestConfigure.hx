@@ -2,7 +2,7 @@ package stx.di.test;
 
 @:stx.test.Register
 class TestConfigure extends utest.Test{
-	public function testModuleure(){
+	public function testAssemblyure(){
 		trace("TEST");
 	}
 }

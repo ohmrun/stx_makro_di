@@ -1,8 +1,8 @@
 package stx.di.test.head.data;
 
-class WithNotInModule{
-  public function new(notInModule){
-    this.notInModule = notInModule;
+class WithNotInAssembly{
+  public function new(notInAssembly){
+    this.notInAssembly = notInAssembly;
   }
-  public var notInModule : NotInModule;
+  public var notInAssembly : NotInAssembly;
 }

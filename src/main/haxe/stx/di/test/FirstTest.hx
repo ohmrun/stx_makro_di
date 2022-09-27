@@ -77,16 +77,16 @@ class FirstTest extends TestCase{
   //   trace("________________________________________");
   //   var di6 = __.di();
   //       di6.add(
-  //         (notInModule:stx.di.test.head.data.NotInModule) -> new WithNotInModule(notInModule)
+  //         (notInAssembly:stx.di.test.head.data.NotInAssembly) -> new WithNotInAssembly(notInAssembly)
   //       );
 
   //   var di7 = di6.extend();
   //       di7.add(
-  //         () -> new NotInModule()
+  //         () -> new NotInAssembly()
   //       );
   //       di7.injector().run(
-  //         function(v:WithNotInModule){
-  //           trace(v.notInModule.ok);
+  //         function(v:WithNotInAssembly){
+  //           trace(v.notInAssembly.ok);
   //         }
   //       );
   // }
@@ -108,11 +108,11 @@ class FirstTest extends TestCase{
 }
 
 @:stx.Dependencies.register(__)
-class FirstTestModule extends stx.di.core.Module{
+class FirstTestAssembly extends stx.di.core.Assembly{
 
 }
 @:stx.Dependencies.register(__)
-class NotherModule extends stx.di.core.Module{
+class NotherAssembly extends stx.di.core.Assembly{
   override public function react(di){
     
   }
