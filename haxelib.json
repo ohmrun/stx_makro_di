@@ -17,7 +17,6 @@
         "tink_macro"        : "git:https://github.com/haxetink/tink_macro.git",
         "tink_syntaxhub"    : "git:https://github.com/haxetink/tink_syntaxhub.git",
         "tink_priority"     : "git:https://github.com/haxetink/tink_priority.git",
-        "hx3compat"         : "git:https://github.com/HaxeFoundation/hx3compat.git",
         "stx_pico"          : "git:https://github.com/ohmrun/stx_pico.git",
         "stx_nano"          : "git:https://github.com/ohmrun/stx_nano.git",
         "stx_pkg"           : "git:https://github.com/ohmrun/stx_pkg.git",

@@ -1,7 +1,7 @@
 package stx.di.test;
 
 @:stx.Dependencies.register(__)
-class ConfigureDependencies extends stx.di.core.Assembly{
+class ConfigureDependencies extends stx.di.Assembly{
 	
 	public function main():Int{
 		return 0;
