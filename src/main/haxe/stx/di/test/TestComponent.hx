@@ -17,7 +17,6 @@ class TestComponent extends haxe.unit.TestCase{
 		var injector = di.injector();
 				//injector.run((int:Int) -> {
 			//equals(0,int);
-		});
 	}
   public function testAbstract(){
     var di = new DI();
