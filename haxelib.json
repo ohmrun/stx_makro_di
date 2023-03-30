@@ -1,5 +1,5 @@
 {
-    "name": "stx_di",
+    "name": "stx_makro_di",
     "license": "MIT",
     "tags": [
         "DI",
@@ -11,7 +11,7 @@
     ],
     "releasenote": "simple, works",
     "version": "0.0.1",
-    "url": "https://github.com/ohmrun/stx_di",
+    "url": "https://github.com/ohmrun/stx_makro_di",
     "dependencies": {
         "tink_core"         : "",
         "tink_macro"        : "",

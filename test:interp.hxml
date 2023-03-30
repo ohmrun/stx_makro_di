@@ -13,10 +13,6 @@
 -lib stx_pkg
 -lib stx_test
 -lib stx_makro
--lib stx_di
+-lib stx_makro_di
 -D no-deprecation-warnings
 --interp
-
------------------------
-
-Build completed with 0 successes and 0 failures.

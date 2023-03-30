@@ -1,4 +1,4 @@
-# stx_di
+# stx_makro_di
 simple, powerful dependency injection
 
 
