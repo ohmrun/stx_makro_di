@@ -5,7 +5,7 @@ simple, powerful dependency injection
 code pinched from somewhere.
 
 ```
-import stx.DI;
+import stx.makro.di;
 
 var di = new DI();
     di.add(Type.new);

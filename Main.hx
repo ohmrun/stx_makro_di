@@ -1,6 +1,6 @@
-//import stx.di.Package;
+//import stx.makro.di.Package;
 
-import stx.Dependencies;
+import stx.makro.di.Dependencies;
 
 using Lambda;
 using stx.Nano;

@@ -1,5 +1,6 @@
 {
   "build" : {
+    "-D" : ["no-deprecation-warnings"],
     "-cp" : "src/main/haxe",
     "-lib" : [
       "tink_priority",
@@ -19,7 +20,11 @@
       "stx_di"
     ],
     "test" : {
-      "-main" : "stx.di.Test"  
+      "-cp" : "src/test/haxe",
+      "-main" : "stx.makro.di.Test",
+      "interp" : {
+        "--interp" : true
+      }
     }
   }
 }

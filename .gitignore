@@ -1,3 +1,4 @@
-dump
-.ionide
-.vscode
+/dump
+/.ionide
+/.vscode
+/.env.machine

@@ -523,7 +523,7 @@ Parsed /usr/local/share/haxe/std/eval/vm/NativeThread.hx
 Parsed /mnt/dat/prj/haxe/stx_core/src/main/haxe/stx/core/pack/VouchTrigger.hx
 Parsed /mnt/dat/prj/haxe/stx_core/src/main/haxe/stx/alias/StdOption.hx
 Parsed /mnt/dat/prj/haxe/stx_core/src/main/haxe/stx/core/pack/Api.hx
-Typing stx.di.Package.tests
+Typing stx.makro.di.Package.tests
 Parsed src/main/haxe/stx/di/test/RegressionTest.hx
 Parsed /mnt/dat/prj/haxe/stx_di/src/main/haxe/stx/di/test/import.hx
 Typing haxe.unit.TestCase.new
@@ -608,8 +608,8 @@ Parsed /usr/local/share/haxe/std/IntIterator.hx
 Typing IntIterator.new
 Typing IntIterator.hasNext
 Typing IntIterator.next
-Typing stx.di.test.RegressionTest.testMacroClass
-Typing stx.di.DI.new
+Typing stx.makro.di.test.RegressionTest.testMacroClass
+Typing stx.makro.di.DI.new
 Parsed /usr/local/share/haxe/std/Math.hx
 Parsed src/main/haxe/stx/di/DI.hx
 Parsed /mnt/dat/prj/haxe/stx_di/src/main/haxe/stx/di/import.hx
@@ -972,7 +972,7 @@ Typing macro haxe.macro.Context.registerAssemblyReuseCall
 Typing macro haxe.macro.Context.onMacroContextReused
 Typing macro haxe.macro.Context.includeFile
 Typing macro haxe.macro.Context.sExpr
-Typing macro stx.di.body.Util.get_id
+Typing macro stx.makro.di.body.Util.get_id
 Parsed /usr/local/share/haxe/std/haxe/macro/TypeTools.hx
 Typing macro haxe.macro.TypeTools.toComplexType
 Typing macro haxe.macro.TypeTools.nullable
@@ -991,7 +991,7 @@ Typing macro haxe.macro.TypeTools.iter
 Typing macro haxe.macro.TypeTools.toString
 Typing macro haxe.macro.TypeTools.findField
 Typing macro Lambda.find
-Typing macro stx.di.body.Util.print
+Typing macro stx.makro.di.body.Util.print
 Parsed /usr/local/share/haxe/std/haxe/Log.hx
 Typing macro haxe.Log.trace
 Typing macro haxe.Log.formatOutput
@@ -1108,8 +1108,8 @@ Typing macro Sys.__init__
 Parsed /usr/local/share/haxe/std/eval/_std/sys/io/FileOutput.hx
 Parsed /usr/local/share/haxe/std/sys/io/FileSeek.hx
 Parsed /usr/local/share/haxe/std/eval/_std/sys/io/FileInput.hx
-Typing macro stx.di.Injector.new
-Typing macro stx.di.Injector.run
+Typing macro stx.makro.di.Injector.new
+Typing macro stx.makro.di.Injector.run
 Typing macro haxe.ds.List.new
 Typing macro haxe.ds.List.add
 Typing macro haxe.ds._List.ListNode.create
@@ -2410,18 +2410,18 @@ Typing macro stx.reflect.MetasLift.locals
 Typing macro stx.reflect.MetasLift.globals
 Typing macro stx.reflect.MetasClassLift.globals
 Typing macro stx.reflect.ClassReflectLift.definition
-Typing macro stx.di.Resolvers.resolves
-Typing macro stx.di.DI.tootksy
-Typing macro stx.di.DI.add
-Typing macro stx.di.DI._has
-Typing macro stx.di.DI._add
-Typing macro stx.di.DI.extend
-Typing macro stx.di.DI.copy
-Typing macro stx.di.DI.new
-Typing macro stx.di.DI.copyMap
-Typing macro stx.di.DI.concat
-Typing macro stx.di.DI.injector
-Typing macro stx.di.DI.resolver
+Typing macro stx.makro.di.Resolvers.resolves
+Typing macro stx.makro.di.DI.tootksy
+Typing macro stx.makro.di.DI.add
+Typing macro stx.makro.di.DI._has
+Typing macro stx.makro.di.DI._add
+Typing macro stx.makro.di.DI.extend
+Typing macro stx.makro.di.DI.copy
+Typing macro stx.makro.di.DI.new
+Typing macro stx.makro.di.DI.copyMap
+Typing macro stx.makro.di.DI.concat
+Typing macro stx.makro.di.DI.injector
+Typing macro stx.makro.di.DI.resolver
 Parsed /usr/local/share/haxe/std/StdTypes.hx
 Parsed /usr/local/share/haxe/std/String.hx
 Parsed /usr/local/share/haxe/std/Array.hx
@@ -2809,8 +2809,8 @@ Typing macro haxe.crypto.Base64.urlEncode
 Typing macro haxe.crypto.Base64.urlDecode
 Typing macro haxe.Resource.getBytes
 Typing macro haxe.Resource.__init__
-Calling macro stx.di.DI.tootksy (src/main/haxe/stx/di/test/RegressionTest.hx:11)
-Exiting macro stx.di.DI.tootksy
+Calling macro stx.makro.di.DI.tootksy (src/main/haxe/stx/di/test/RegressionTest.hx:11)
+Exiting macro stx.makro.di.DI.tootksy
 Calling macro stx.Regression.toot (src/main/haxe/stx/di/test/RegressionTest.hx:15)
 Exiting macro stx.Regression.toot
 Typing haxe.macro.Context.error
@@ -2873,8 +2873,8 @@ Typing haxe.macro.Context.registerAssemblyReuseCall
 Typing haxe.macro.Context.onMacroContextReused
 Typing haxe.macro.Context.includeFile
 Typing haxe.macro.Context.sExpr
-Typing stx.di.body.Util.print
-Typing stx.di.Injector.new
+Typing stx.makro.di.body.Util.print
+Typing stx.makro.di.Injector.new
 Typing haxe.iterators.DynamicAccessIterator.new
 Typing haxe._DynamicAccess.DynamicAccess_Impl_.keys
 Typing haxe.iterators.DynamicAccessIterator.hasNext
@@ -4062,30 +4062,30 @@ Typing stx.reflect.MetasLift.locals
 Typing stx.reflect.MetasLift.globals
 Typing stx.reflect.MetasClassLift.globals
 Typing stx.reflect.ClassReflectLift.definition
-Typing stx.di.DI._has
-Typing stx.di.DI._add
-Typing stx.di.DI.extend
-Typing stx.di.DI.copy
-Typing stx.di.DI.copyMap
-Typing stx.di.DI.concat
+Typing stx.makro.di.DI._has
+Typing stx.makro.di.DI._add
+Typing stx.makro.di.DI.extend
+Typing stx.makro.di.DI.copy
+Typing stx.makro.di.DI.copyMap
+Typing stx.makro.di.DI.concat
 Typing haxe.ds.StringMap.keyValueIterator
 Parsed /usr/local/share/haxe/std/haxe/iterators/MapKeyValueIterator.hx
 Typing haxe.iterators.MapKeyValueIterator.new
 Typing haxe.iterators.MapKeyValueIterator.hasNext
 Typing haxe.iterators.MapKeyValueIterator.next
-Typing stx.di.DI.injector
-Typing stx.di.DI.resolver
-Typing stx.di.Resolvers.resolves
+Typing stx.makro.di.DI.injector
+Typing stx.makro.di.DI.resolver
+Typing stx.makro.di.Resolvers.resolves
 Parsed src/main/haxe/stx/di/Package.hx
-Typing macro stx.di.Package.boot
-Typing macro stx.di.Package.tests
+Typing macro stx.makro.di.Package.boot
+Typing macro stx.makro.di.Package.tests
 Parsed src/main/haxe/stx/di/test/RegressionTest.hx
 Parsed /mnt/dat/prj/haxe/stx_di/src/main/haxe/stx/di/test/import.hx
 Parsed /mnt/dat/lib/haxe/hx3compat/1,0,3/std/haxe/unit/TestCase.hx
 Parsed /mnt/dat/lib/haxe/hx3compat/1,0,3/std/haxe/unit/TestStatus.hx
 Typing macro haxe.unit.TestCase.new
 Typing macro haxe.unit.TestStatus.new
-Typing macro stx.di.test.RegressionTest.testMacroClass
+Typing macro stx.makro.di.test.RegressionTest.testMacroClass
 Typing macro haxe.unit.TestCase.setup
 Typing macro haxe.unit.TestCase.tearDown
 Typing macro haxe.unit.TestCase.print
