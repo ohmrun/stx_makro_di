@@ -1,5 +1,7 @@
 package stx.makro.di;
 
+#if macro
+
 import haxe.macro.Type;
 import haxe.macro.Context;
 import haxe.macro.Expr;
@@ -21,6 +23,7 @@ using stx.makro.Type;
 import tink.priority.ID;
 import tink.MacroApi.ClassBuilder;
 import tink.SyntaxHub;
+
 
 class Plugin{
   @:access(tink.priority.ID) static public function use(){
@@ -133,3 +136,4 @@ class Plugin{
     return should;
   }
 }
+#end

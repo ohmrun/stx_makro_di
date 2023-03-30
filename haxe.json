@@ -19,6 +19,12 @@
       "stx_makro",
       "stx_di"
     ],
+    "unit" : {
+      "--macro" : [
+        "include('stx.makro.di',true)",
+        "include('stx.makro.Di',true)"
+      ]
+    },
     "test" : {
       "-cp" : "src/test/haxe",
       "-main" : "stx.makro.di.Test",
