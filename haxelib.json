@@ -15,7 +15,6 @@
     "dependencies": {
         "tink_core"         : "",
         "tink_macro"        : "",
-        "tink_syntaxhub"    : "",
         "tink_priority"     : "",
         "stx_pico"          : "",
         "stx_nano"          : "",

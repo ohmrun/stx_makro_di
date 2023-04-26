@@ -6,7 +6,6 @@
       "tink_priority",
       "tink_core",
       "tink_macro",
-      "tink_syntaxhub",
   
   
       "stx_pico",
@@ -25,12 +24,17 @@
         "include('stx.makro.Di',true)"
       ]
     },
+    "listen" : {
+      "--connect" : "7070" 
+    },
     "test" : {
       "-cp" : "src/test/haxe",
       "-main" : "stx.makro.di.Test",
       "interp" : {
         "--interp" : true
-      }
+      },
+      "--times" : true,
+      "--verbose" : true
     }
   }
 }

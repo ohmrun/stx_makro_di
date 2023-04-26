@@ -4,5 +4,5 @@ class WithNotInAssembly{
   public function new(notInAssembly){
     this.notInAssembly = notInAssembly;
   }
-  public var notInAssembly : NotInAssembly;
+  public var notInAssembly : stx.makro.di.test.head.data.some_package.NotInAssembly;
 }
