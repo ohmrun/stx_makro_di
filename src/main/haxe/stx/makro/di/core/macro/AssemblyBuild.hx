@@ -11,6 +11,7 @@ import haxe.macro.Expr;
 import haxe.macro.Context;
 using stx.makro.Expr;
 #end
+
 class AssemblyBuild{
   static macro function build():Array<haxe.macro.Field>{
     final printer     = new haxe.macro.Printer();
