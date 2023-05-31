@@ -22,7 +22,10 @@
       "--macro" : [
         "include('stx.makro.di',true)",
         "include('stx.makro.Di',true)"
-      ]
+      ],
+      "interp" : {
+        "--interp"  : true
+      }
     },
     "listen" : {
       "--connect" : "7070" 
